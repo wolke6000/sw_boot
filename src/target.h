@@ -39,5 +39,6 @@ extern void target_pre_main(void);
 extern void target_post_setup(void);
 extern void target_pre_detach(bool manifested);
 extern size_t target_get_timeout(void);
+extern void target_configure_hardware(void);
 
 #endif

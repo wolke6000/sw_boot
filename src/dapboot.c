@@ -59,6 +59,8 @@ int main(void) {
     /* Setup clocks */
     target_clock_setup();
 
+    target_configure_hardware();
+
     /* Initialize GPIO/LEDs if needed */
     target_gpio_setup();
 

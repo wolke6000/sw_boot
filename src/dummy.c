@@ -28,6 +28,7 @@ void target_pre_main(void) __attribute__((weak));
 void target_pre_detach(bool manifested) __attribute__((weak));
 void target_post_setup(void) __attribute__((weak));
 size_t target_get_timeout(void) __attribute__((weak));
+void target_configure_hardware(void) __attribute__((weak));
 
 void target_get_serial_number(char* dest, size_t max_chars) {
     (void)max_chars;
@@ -48,6 +49,11 @@ void target_pre_main(void)
 void target_post_setup(void)
 {
 	/* This runs just before starting to listen to USB */
+}
+
+void target_configure_hardware(void)
+{
+
 }
 
 
