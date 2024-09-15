@@ -146,6 +146,12 @@ ifeq ($(TARGET),STM32L1_GENERIC)
 	ARCH			= STM32L1
 	DEFS			+= -DNDEBUG
 endif
+ifeq ($(TARGET),SW_BASE)
+	TARGET_COMMON_DIR	:= ./stm32f103
+	TARGET_SPEC_DIR		:= ./stm32f103/sw_base
+	LDSCRIPT			:= ./stm32f103/stm32f103x8.ld
+	ARCH				= STM32F1
+endif
 
 ifndef ARCH
 $(error Unknown target $(TARGET))

@@ -45,7 +45,8 @@ all: dapboot-bluepill.bin \
      dapboot-stlink-high-128.bin \
      dapboot-olimexstm32h103-high-128.bin \
      dapboot-bluepillplusstm32-high-128.bin \
-     dapboot-bttskrminie3v2-high-256.bin
+     dapboot-bttskrminie3v2-high-256.bin \
+     dapboot-sw_base.bin
 
 clean:
 	$(Q)$(RM) $(BUILD_DIR)/*.bin
@@ -157,3 +158,11 @@ dapboot-bttskrminie3v2-high-256.bin: | $(BUILD_DIR)
 	$(Q)$(MAKE) TARGET=BTTSKRMINIE3V2_HIGH_256 -C src/ clean
 	$(Q)$(MAKE) TARGET=BTTSKRMINIE3V2_HIGH_256 -C src/
 	$(Q)cp src/dapboot.bin $(BUILD_DIR)/$(@)
+	
+dapboot-sw_base.bin: | $(BUILD_DIR)
+	@printf "  BUILD $(@)\n"
+	$(Q)$(MAKE) TARGET=sw_base -C src/ clean
+	$(Q)$(MAKE) TARGET=sw_base -C src/
+	$(Q)cp src/dapboot.bin $(BUILD_DIR)/$(@)
+
+	
