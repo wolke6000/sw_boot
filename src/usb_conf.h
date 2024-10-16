@@ -22,15 +22,15 @@
 #include <libopencm3/usb/usbd.h>
 
 #ifndef USB_VID
-#define USB_VID                 0x1209
+#define USB_VID                 0x0483
 #endif
 
 #ifndef USB_VENDOR_STRING
-#define USB_VENDOR_STRING "Devanarchy"
+#define USB_VENDOR_STRING "Switchology"
 #endif
 
 #ifndef USB_PID
-#define USB_PID                 0xdb42
+#define USB_PID                 0xA4F5
 #endif
 
 // The DFU interface doesn't have any special alternate setting by default
@@ -43,13 +43,13 @@
 #ifdef BOOTLOADER_HIGH
 #define USB_PRODUCT_STRING "DAPBoot High-Memory DFU Bootloader"
 #else
-#define USB_PRODUCT_STRING "DAPBoot DFU Bootloader"
+#define USB_PRODUCT_STRING "Switchology DFU Bootloader"
 #endif
  
 #endif
 
 #ifndef USB_INTERFACE_STRING
-#define USB_INTERFACE_STRING "DAPBoot DFU"
+#define USB_INTERFACE_STRING "Switchology DFU"
 #endif
 
 #define USB_CONTROL_BUF_SIZE    1024
